@@ -1,17 +1,51 @@
-rootProject.name = "TheRouter"
-
-apply from: "${rootDir}/therouter.gradle"
-getLocalProperties().entrySet().each { entry ->
-    def prefix = ""
-//    if (entry.key.startsWith(prefix) && Boolean.valueOf(entry.value)) {
-    if (Boolean.valueOf(entry.value)) {
-        def moduleName = entry.key
-        if (!String.valueOf(moduleName).isEmpty()) {
-            def file = file(moduleName)
-            if (file.exists()) {
-                include ":$moduleName"
-                project(":$moduleName").projectDir = file
-            }
-        }
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/grails-core' }
+        maven { url 'https://raw.githubusercontent.com/saki4510t/libcommon/master/repository/' }
+        maven { url 'https://gitee.com/liuchaoya/libcommon/raw/master/repository/' }
+        maven { url "https://repo.eclipse.org/content/repositories/paho-snapshots/" }
+        maven { url 'https://developer.huawei.com/repo/' }
+        maven { url "https://jitpack.io" }
+        maven { url 'https://www.jitpack.io' }
+        mavenCentral()
+        google()
     }
 }
+
+rootProject.name = "ABasicKit_TheRouter"
+include ':test'
+include ':test2'
+include ':app'
+include ':business-a'
+include ':business-b'
+include ':business-base'
+include ':therouter'
+include ':therouter_apt'
+include ':therouter_plugin'
+
+//SwiftKit
+include ':SwiftKit'
+project(':SwiftKit').projectDir = new File("C:\\Users\\${System.getenv().get("USERNAME")}\\Documents\\GitHub\\SwiftKit")
+include ':SwiftKit:basick'
+
+//apply from: "${rootDir}/therouter.gradle"
+//getLocalProperties().entrySet().each { entry ->
+//    def prefix = ""
+////    if (entry.key.startsWith(prefix) && Boolean.valueOf(entry.value)) {
+//    if (Boolean.valueOf(entry.value)) {
+//        def moduleName = entry.key
+//        if (!String.valueOf(moduleName).isEmpty()) {
+//            def file = file(moduleName)
+//            if (file.exists()) {
+//                include ":$moduleName"
+//                project(":$moduleName").projectDir = file
+//            }
+//        }
+//    }
+//}
