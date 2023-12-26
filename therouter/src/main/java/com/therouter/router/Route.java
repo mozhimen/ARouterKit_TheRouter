@@ -31,6 +31,8 @@ public @interface Route {
      */
     String description() default "";
 
+    boolean isDeconstructPath() default true;
+
     /**
      * 页面参数，自动写入intent中，允许写在路由表中动态下发修改默认值，或通过路由跳转时代码传入
      */

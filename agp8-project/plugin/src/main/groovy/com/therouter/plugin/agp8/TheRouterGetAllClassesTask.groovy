@@ -180,7 +180,7 @@ abstract class TheRouterGetAllClassesTask extends DefaultTask {
 
 
         Set<RouteItem> pageSet = new HashSet<>()
-        Gson gson = new GsonBuilder().setPrettyPrinting().create()
+        Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create()
         routeMapStringSet.each {
             pageSet.addAll((List<RouteItem>) gson.fromJson(it, new TypeToken<List<RouteItem>>() {
             }.getType()))
@@ -217,7 +217,7 @@ abstract class TheRouterGetAllClassesTask extends DefaultTask {
         // 检查url合法性
         pageSet.each { routeItem ->
             String url = routeItem.path
-            if (url.contains("?")) {
+            if (url.contains("?")&&routeItem.isDeconstructPath) {
                 URI uri = new URI(routeItem.path)
                 def map = uri.getProperties()
                 for (key in map.keySet()) {

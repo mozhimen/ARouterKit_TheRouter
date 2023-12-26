@@ -2,6 +2,7 @@ package com.mozhimen.basick.therouter.test
 
 import com.mozhimen.basick.elemk.android.app.bases.BaseApplication
 import com.mozhimen.basick.lintk.optin.OptInApiMultiDex_InApplication
+import com.therouter.TheRouter
 import dagger.hilt.android.HiltAndroidApp
 
 /**
@@ -14,4 +15,8 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 @OptIn(OptInApiMultiDex_InApplication::class)
 class MainApplication : BaseApplication() {
+    override fun onCreate() {
+        super.onCreate()
+        TheRouter.isDebug = true
+    }
 }

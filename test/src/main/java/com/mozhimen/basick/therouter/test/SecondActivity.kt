@@ -16,7 +16,7 @@ class SecondActivity : BaseActivityVB<ActivitySecondBinding>() {
             TheRouter.build("/main").navigation()
         }
         vb.secondBtn1.setOnClickListener {
-            TheRouter.build("/third").withString("EXTRA2", "这是第二个页面的数据").navigation()
+            TheRouter.build("/third?type=mod").withString("EXTRA2", "这是第二个页面的数据").setDisableDeconstructUrl().navigation()
         }
     }
 }

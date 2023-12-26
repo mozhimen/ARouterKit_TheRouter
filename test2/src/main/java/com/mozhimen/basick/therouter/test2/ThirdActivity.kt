@@ -7,7 +7,7 @@ import com.therouter.router.Route
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-@Route(path = "/third?type=mod&aa=22")
+@Route(path = "/third?type=mod", isDeconstructPath = false)
 class ThirdActivity : BaseActivityVB<ActivityThirdBinding>() {
     override fun initView(savedInstanceState: Bundle?) {
         android.util.Log.d(TAG, "initView: EXTRA2 ${intent.getStringExtra("EXTRA2")}")

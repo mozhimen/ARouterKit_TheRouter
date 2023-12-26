@@ -1,6 +1,7 @@
 package com.therouter.apt
 
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.therouter.app.flowtask.lifecycle.FlowTask
 import com.therouter.inject.NewInstance
 import com.therouter.inject.ServiceProvider
@@ -37,7 +38,7 @@ const val PACKAGE = "a"
 const val PREFIX_SERVICE_PROVIDER = "ServiceProvider__TheRouter__"
 const val PREFIX_ROUTER_MAP = "RouterMap__TheRouter__"
 const val SUFFIX_AUTOWIRED = "__TheRouter__Autowired"
-val gson = Gson()
+val gson = GsonBuilder().disableHtmlEscaping().create()
 
 class TheRouterAnnotationProcessor : AbstractProcessor() {
     private var isProcess = false
@@ -177,6 +178,7 @@ class TheRouterAnnotationProcessor : AbstractProcessor() {
                     routeItem.path = it.path
                     routeItem.action = it.action
                     routeItem.description = it.description
+                    routeItem.isDeconstructPath = it.isDeconstructPath
                     require(it.params.size % 2 == 0) { "$element params is not key value pairs" }
                     var key: String? = null
                     for (kv in it.params) {
@@ -200,6 +202,7 @@ class TheRouterAnnotationProcessor : AbstractProcessor() {
                 routeItem.path = annotation.path
                 routeItem.action = annotation.action
                 routeItem.description = annotation.description
+                routeItem.isDeconstructPath = annotation.isDeconstructPath
                 require(annotation.params.size % 2 == 0) { "$element params is not key value pairs" }
                 var key: String? = null
                 for (kv in annotation.params) {
@@ -404,7 +407,7 @@ class TheRouterAnnotationProcessor : AbstractProcessor() {
             var i = 0
             for (item in routePagelist) {
                 i++
-                ps.println("\t\tcom.therouter.router.RouteItem item$i = new com.therouter.router.RouteItem(\"${item.path}\",\"${item.className}\",\"${item.action}\",\"${item.description}\");")
+                ps.println("\t\tcom.therouter.router.RouteItem item$i = new com.therouter.router.RouteItem(\"${item.path}\",\"${item.className}\",\"${item.action}\",\"${item.description}\",${item.isDeconstructPath});")
                 item.params.keys.forEach {
                     ps.println("\t\titem$i.addParams(\"$it\", \"${item.params[it]}\");")
                 }

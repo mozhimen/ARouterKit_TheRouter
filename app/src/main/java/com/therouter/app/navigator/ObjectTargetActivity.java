@@ -41,7 +41,7 @@ public class ObjectTargetActivity extends BaseActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RouteMapKt.addRouteItem(new RouteItem(HomePathIndex.OBJECT_TEST2, NavigatorTestActivity.class.getName(), "", "测试替换"));
+                RouteMapKt.addRouteItem(new RouteItem(HomePathIndex.OBJECT_TEST2, NavigatorTestActivity.class.getName(), "", "测试替换", true));
             }
         });
         Button button4 = findViewById(R.id.button4);
@@ -49,7 +49,7 @@ public class ObjectTargetActivity extends BaseActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RouteMapKt.addRouteItem(new RouteItem(HomePathIndex.OBJECT_TEST2, ObjectTargetActivity.class.getName(), "", "还原"));
+                RouteMapKt.addRouteItem(new RouteItem(HomePathIndex.OBJECT_TEST2, ObjectTargetActivity.class.getName(), "", "还原", true));
             }
         });
         Button button5 = findViewById(R.id.button5);

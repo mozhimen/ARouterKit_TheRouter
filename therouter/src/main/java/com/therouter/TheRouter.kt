@@ -168,7 +168,7 @@ object TheRouter {
      * Path 会被记录到路由表内，Action不会被记录，Action更像是一个消息事件，参考Android的广播
      */
     @JvmStatic
-    fun isRouterPath(url: String?) = matchRouteMap(url) != null
+    fun isRouterPath(url: String?, isDeconstructPath: Boolean) = matchRouteMap(url,isDeconstructPath) != null
 
     /**
      * 获取跨模块依赖的服务

@@ -78,6 +78,7 @@ class TheRouterSymbolProcessor(
                         "path" -> routeItem.path = "${arg.value}"
                         "action" -> routeItem.action = "${arg.value}"
                         "description" -> routeItem.description = "${arg.value}"
+                        "isDeconstructPath" -> routeItem.isDeconstructPath = arg.value as Boolean
                         "params" -> {
                             if (arg.value is Array<*>) {
                                 require((arg.value as Array<*>).size % 2 == 0) { "${routeItem.className} @Route(params) is not key value pairs" }
@@ -152,7 +153,7 @@ class TheRouterSymbolProcessor(
             var i = 0
             for (item in routePagelist) {
                 i++
-                ps.println("\t\tval item$i = com.therouter.router.RouteItem(\"${item.path}\",\"${item.className}\",\"${item.action}\",\"${item.description}\")")
+                ps.println("\t\tval item$i = com.therouter.router.RouteItem(\"${item.path}\",\"${item.className}\",\"${item.action}\",\"${item.description}\",${item.isDeconstructPath})")
                 item.params.keys.forEach {
                     ps.println("\t\titem$i.addParams(\"$it\", \"${item.params[it]}\")")
                 }

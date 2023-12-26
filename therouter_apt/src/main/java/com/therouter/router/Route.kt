@@ -25,6 +25,8 @@ annotation class Route(
      * 页面描述，会被记录到路由表中，方便后期排查的时候知道每个path或Activity是什么业务
      */
     val description: String = "",
+
+    val isDeconstructPath: Boolean = true,
     /**
      * 页面参数，自动写入intent中，允许写在路由表中动态下发修改默认值，或通过路由跳转时代码传入
      */

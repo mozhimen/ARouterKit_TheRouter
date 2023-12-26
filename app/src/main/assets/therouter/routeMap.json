@@ -4,6 +4,7 @@
     "className": "com.therouter.demo.shell.TestInjectActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -11,6 +12,7 @@
     "className": "com.therouter.demo.shell.TestActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -18,6 +20,7 @@
     "className": "com.therouter.demo.shell.MultiThreadActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -25,6 +28,7 @@
     "className": "com.therouter.demo.shell.MainActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -32,6 +36,7 @@
     "className": "com.therouter.app.router.PendingTestActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -39,6 +44,7 @@
     "className": "com.therouter.app.router.OtherFunctionActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -46,6 +52,7 @@
     "className": "com.therouter.app.router.HistoryLogActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -53,6 +60,7 @@
     "className": "com.therouter.app.navigator.ViewBindingTestFragment",
     "action": "",
     "description": "ViewBinding测试页",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -60,6 +68,7 @@
     "className": "com.therouter.app.navigator.ObjectTargetActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -67,6 +76,7 @@
     "className": "com.therouter.app.navigator.ObjectTargetActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -74,6 +84,7 @@
     "className": "com.therouter.app.navigator.NavigatorTestActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -81,6 +92,7 @@
     "className": "com.therouter.app.navigator.NavigatorTargetActivity2",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {
       "strFromAnnotation": "来自注解设置的默认值，允许路由动态修改"
     }
@@ -90,6 +102,7 @@
     "className": "com.therouter.app.navigator.NavigatorTargetActivity2",
     "action": "action://scheme.com",
     "description": "路由测试首页",
+    "isDeconstructPath": true,
     "params": {
       "strFromAnnotation": "来自注解设置的默认值，允许路由动态修改"
     }
@@ -99,6 +112,7 @@
     "className": "com.therouter.app.navigator.NavigatorFragmentActivity",
     "action": "",
     "description": "Fragment容器页",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -106,6 +120,7 @@
     "className": "com.therouter.app.navigator.NavigatorFragment2",
     "action": "",
     "description": "Fragment测试页",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -113,6 +128,7 @@
     "className": "com.therouter.app.navigator.NavigatorFragment",
     "action": "",
     "description": "Fragment测试页",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -120,6 +136,7 @@
     "className": "com.therouter.app.navigator.KotlinTestActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -127,6 +144,7 @@
     "className": "com.therouter.app.navigator.KotlinTestActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -134,6 +152,7 @@
     "className": "com.therouter.app.navigator.InterceptorActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -141,6 +160,7 @@
     "className": "com.therouter.app.flowtask.FlowTaskTestActivity2",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -148,6 +168,7 @@
     "className": "com.therouter.app.flowtask.FlowTaskTestActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   },
   {
@@ -155,6 +176,7 @@
     "className": "com.therouter.app.action.TestActionActivity",
     "action": "",
     "description": "",
+    "isDeconstructPath": true,
     "params": {}
   }
 ]

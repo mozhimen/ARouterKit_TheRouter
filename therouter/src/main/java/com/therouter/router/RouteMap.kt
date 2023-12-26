@@ -4,6 +4,7 @@ import a.initDefaultRouteMap
 import android.content.Intent
 import android.text.TextUtils
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.therouter.ROUTE_MAP_ASSETS_PATH
 import com.therouter.TheRouter
@@ -22,7 +23,7 @@ private var initTask: RouterMapInitTask? = null
 @Volatile
 internal var initedRouteMap = false
 private var onRouteMapChangedListener: OnRouteMapChangedListener? = null
-val gson = Gson()
+val gson = GsonBuilder().disableHtmlEscaping().create()
 
 /**
  * 在主线程初始化路由表
@@ -116,7 +117,7 @@ fun foundPathFromIntent(intent: Intent): String? {
             }
         }
         // 如果路由表中没有这个类名，则新增一条路由项
-        val item = RouteItem(className, className, "", className)
+        val item = RouteItem(className, className, "", className, true)
         item.addAll(intent.extras)
         addRouteItem(item)
         return className
@@ -128,8 +129,8 @@ fun foundPathFromIntent(intent: Intent): String? {
  * 尝试通过Path，从路由表中获取对应的路由项，如果没有对应路由，则返回null
  */
 @Synchronized
-fun matchRouteMap(url: String?): RouteItem? {
-    var path = TheRouter.build(url ?: "").simpleUrl
+fun matchRouteMap(url: String?, isDeconstructPath: Boolean): RouteItem? {
+    var path = TheRouter.build(url ?: "").isDeconstructUrl(isDeconstructPath).simpleUrl
     if (path.endsWith("/")) {
         path = path.substring(0, path.length - 1)
     }

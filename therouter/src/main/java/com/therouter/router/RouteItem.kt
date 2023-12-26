@@ -2,11 +2,8 @@ package com.therouter.router
 
 import android.os.Bundle
 import androidx.annotation.Keep
-import androidx.core.app.NotificationCompat.getExtras
 import com.therouter.router.interceptor.NavigatorParamsFixHandle
 import java.io.Serializable
-import java.io.UnsupportedEncodingException
-import java.net.URLEncoder
 import java.util.*
 
 /**
@@ -27,6 +24,7 @@ class RouteItem : Serializable {
     var action = ""
     var description = ""
 
+    var isDeconstructPath = true
     // 仅用于RouteMap.json文件被gson转换时存储，外部不可访问
     val params = HashMap<String, String>()
 
@@ -35,11 +33,12 @@ class RouteItem : Serializable {
 
     constructor()
 
-    constructor(path: String, className: String, action: String, description: String) {
+    constructor(path: String, className: String, action: String, description: String,isDeconstructUrl:Boolean) {
         this.path = path
         this.className = className
         this.action = action
         this.description = description
+        this.isDeconstructPath = isDeconstructUrl
     }
 
     fun addParams(key: String, value: String) {
@@ -58,19 +57,20 @@ class RouteItem : Serializable {
         return extras
     }
 
-    override fun toString(): String {
-        return "RouteItem(path='$path', className='$className', action='$action', description='$description', extras=$extras)"
-    }
-
     fun copy(): RouteItem {
         val item = RouteItem()
         item.extras.putAll(extras)
         item.params.putAll(params)
+        item.isDeconstructPath = isDeconstructPath
         item.description = description
         item.action = action
         item.className = className
         item.path = path
         return item
+    }
+
+    override fun toString(): String {
+        return "RouteItem(path='$path', className='$className', action='$action', description='$description', isDeconstructUrl=$isDeconstructPath, params=$params, extras=$extras)"
     }
 }
 

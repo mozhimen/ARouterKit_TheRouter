@@ -22,7 +22,7 @@ class TheRouterInjects {
     private static Set<String> autowiredSet = new HashSet<>()
     private static Set<String> routeSet = new HashSet<>()
 
-    private static final Gson gson = new Gson()
+    private static final Gson gson = new GsonBuilder().disableHtmlEscaping().create()
 
     private static final PREFIX_SERVICE_PROVIDER = "ServiceProvider__TheRouter__"
     private static final PREFIX_ROUTER_MAP = "RouterMap__TheRouter__"

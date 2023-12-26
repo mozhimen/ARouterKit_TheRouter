@@ -12,6 +12,8 @@ class RouteItem : Comparable<RouteItem?> {
 
     var description = ""
 
+    var isDeconstructPath = true
+
     var params = HashMap<String, String>()
     override fun compareTo(routeItem: RouteItem?): Int {
         return if (routeItem?.className == null || className == null) {
@@ -28,16 +30,15 @@ class RouteItem : Comparable<RouteItem?> {
                 className == o.className &&
                 action == o.action &&
                 description == o.description &&
+                isDeconstructPath == o.isDeconstructPath &&
                 params == o.params
     }
 
     override fun hashCode(): Int {
-        return Objects.hash(path, className, action, description, params)
+        return Objects.hash(path, className, action, description, isDeconstructPath, params)
     }
 
     override fun toString(): String {
-        return "RouteItem(path='$path', className=$className, action='$action', description='$description', params=$params)"
+        return "RouteItem(path='$path', className=$className, action='$action', description='$description', isDeconstructPath=$isDeconstructPath, params=$params)"
     }
-
-
 }

@@ -8,6 +8,7 @@ public class RouteItem implements Comparable<RouteItem> {
     String className = "";
     String action = "";
     String description = "";
+    Boolean isDeconstructPath = true;
     HashMap<String, String> params = new HashMap<>();
 
     @Override
@@ -21,7 +22,7 @@ public class RouteItem implements Comparable<RouteItem> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(path, className, action, description, params);
+        return Objects.hash(path, className, action, description, isDeconstructPath, params);
     }
 
     @Override
@@ -44,11 +45,12 @@ public class RouteItem implements Comparable<RouteItem> {
 
     @Override
     public String toString() {
-        return "{" +
+        return "RouteItem{" +
                 "path='" + path + '\'' +
                 ", className='" + className + '\'' +
                 ", action='" + action + '\'' +
                 ", description='" + description + '\'' +
+                ", isDeconstructPath=" + isDeconstructPath +
                 ", params=" + params +
                 '}';
     }

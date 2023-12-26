@@ -33,9 +33,11 @@ internal val arguments = HashMap<String, SoftReference<Any>>()
  * RouterItem 用于描述一个静态的路由项
  * Navigator 用于描述一个路由项的跳转动作
  */
-open class Navigator(var url: String?, val intent: Intent?) {
+open class Navigator constructor(var url: String?, val intent: Intent?) {
     val originalUrl = url
+
     val extras = Bundle()
+    private var isDeconstructUrl: Boolean = true
     private var optionsCompat: Bundle? = null
     private var pending = false
     private var intentIdentifier: String? = null
@@ -45,7 +47,7 @@ open class Navigator(var url: String?, val intent: Intent?) {
     val simpleUrl: String
         get() {
             val tempUrl = url ?: ""
-            return if (tempUrl.contains("?")) {
+            return if (tempUrl.contains("?") && isDeconstructUrl) {
                 tempUrl.substring(0, tempUrl.indexOf('?'))
             } else tempUrl
         }
@@ -101,6 +103,16 @@ open class Navigator(var url: String?, val intent: Intent?) {
             stringBuilder.append(handle(key, extras.get(key)?.toString() ?: ""))
         }
         return stringBuilder.toString()
+    }
+
+    fun setDisableDeconstructUrl(): Navigator {
+        this.isDeconstructUrl = false
+        return this
+    }
+
+    fun isDeconstructUrl(isDeconstruct: Boolean): Navigator {
+        this.isDeconstructUrl = isDeconstruct
+        return this
     }
 
     fun pending(): Navigator {
@@ -255,7 +267,7 @@ open class Navigator(var url: String?, val intent: Intent?) {
                 }
             }
         }
-        var match = matchRouteMap(matchUrl)
+        var match = matchRouteMap(matchUrl,isDeconstructUrl)
         match?.getExtras()?.putAll(extras)
         match?.let {
             debug("Navigator::createIntent", "match route $it")
@@ -361,7 +373,7 @@ open class Navigator(var url: String?, val intent: Intent?) {
             }
         }
         debug("Navigator::navigationFragment", "path replace to $matchUrl")
-        var match = matchRouteMap(matchUrl)
+        var match = matchRouteMap(matchUrl,isDeconstructUrl)
         match?.getExtras()?.putAll(extras)
         match?.let {
             debug("Navigator::navigationFragment", "match route $it")
@@ -449,7 +461,7 @@ open class Navigator(var url: String?, val intent: Intent?) {
                 }
             }
         }
-        var match = matchRouteMap(matchUrl)
+        var match = matchRouteMap(matchUrl,isDeconstructUrl)
 
         // navigator can not jump, but ActionManager can handle it.
         if (ActionManager.isAction(this) && match == null) {

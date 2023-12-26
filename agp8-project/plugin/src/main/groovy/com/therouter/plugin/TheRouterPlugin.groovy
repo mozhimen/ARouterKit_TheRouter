@@ -33,7 +33,7 @@ class TheRouterPlugin implements Plugin<Project> {
     public static final FIELD_ROUTER_MAP = "ROUTERMAP"
     public static final NOT_FOUND_VERSION = "0.0.0"
 
-    public static final Gson gson = new Gson()
+    public static final Gson gson = new GsonBuilder().disableHtmlEscaping().create()
 
     public static final Map<String, String> serviceProvideMap = new HashMap<>()
     public static final Set<String> autowiredSet = new HashSet<>()
