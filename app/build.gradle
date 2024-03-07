@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 //apply plugin: 'com.google.devtools.ksp'
 
 android {
+    namespace "com.therouter.app"
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
