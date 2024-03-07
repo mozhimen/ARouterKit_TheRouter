@@ -1,4 +1,8 @@
-apply plugin: 'groovy'
+plugins{
+    id 'java-gradle-plugin'
+    id 'groovy'
+    id 'maven-publish'
+}
 
 dependencies {
     implementation gradleApi()
@@ -11,15 +15,35 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.9.1'
 }
 
+
+gradlePlugin {
+    plugins {
+        therouter {
+            group = "$GroupName"
+            version = "$TheRouterVersion"
+            id = "$GroupName" //插件的唯一标识，使用插件的时候就是这个id
+            implementationClass = "com.therouter.plugin.TheRouterPlugin" //FirstPlugin的全类名 取代resources声明
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            url = uri("../repos")
+        }
+    }
+}
+
 //repositories {
 //    mavenCentral()
 //    google()
 //}
 
-task sourcesJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
+//task sourcesJar(type: Jar) {
+//    classifier = 'sources'
+//    from sourceSets.main.allSource
+//}
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'

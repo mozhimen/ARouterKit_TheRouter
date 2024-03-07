@@ -17,6 +17,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "TheRouter-AGP8"
+include ':therouter_plugin'
 
 apply from: "${rootDir}/../therouter.gradle"
 getLocalProperties().entrySet().each { entry ->

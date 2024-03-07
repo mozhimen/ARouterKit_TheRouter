@@ -6,6 +6,7 @@ import com.android.build.api.variant.ScopedArtifacts
 import com.android.build.api.variant.Variant
 import com.android.build.gradle.AppExtension
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.therouter.plugin.agp8.TheRouterGetAllClassesTask
 import com.therouter.plugin.utils.TheRouterPluginUtils
 import org.gradle.api.Plugin
@@ -49,8 +50,8 @@ class TheRouterPlugin implements Plugin<Project> {
             println("欢迎使用 TheRouter 编译插件：${LogUI.C_BLACK_GREEN.value}" + "cn.therouter:${BuildConfig.NAME}:${BuildConfig.VERSION}" + "${LogUI.E_NORMAL.value}")
             println "当前编译 JDK Version 为::" + System.getProperty("java.version")
             println "GradleVersion::${project.gradle.gradleVersion}"
-            println "CHECK_ROUTE_MAP::${TheRouterPluginUtils.getLocalProperty(project, CHECK_ROUTE_MAP)}"
-            println "CHECK_FLOW_UNKNOW_DEPEND::${TheRouterPluginUtils.getLocalProperty(project, CHECK_FLOW_UNKNOW_DEPEND)}"
+//            println "CHECK_ROUTE_MAP::${TheRouterPluginUtils.getLocalProperty(project, CHECK_ROUTE_MAP)}"
+//            println "CHECK_FLOW_UNKNOW_DEPEND::${TheRouterPluginUtils.getLocalProperty(project, CHECK_FLOW_UNKNOW_DEPEND)}"
 
             def android = project.extensions.getByType(AndroidComponentsExtension.class)
             android.onVariants(android.selector().all(), new Action<Variant>() {

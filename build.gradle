@@ -16,7 +16,7 @@ buildscript {
     }
     dependencies {
         classpath files('./therouter_plugin.jar')//"cn.therouter:plugin:$TheRouterVersion"
-        classpath "com.android.tools.build:gradle:8.2.2"
+        classpath "com.android.tools.build:gradle:7.4.2"
         classpath "com.google.devtools.ksp:symbol-processing-gradle-plugin:1.6.21-1.0.6"
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.46.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22"

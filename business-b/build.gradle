@@ -6,8 +6,8 @@ apply plugin: 'kotlin-kapt'
 group = "cn.therouter.demo"
 
 android {
+    namespace "com.therouter.businessb"
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
 
     defaultConfig {
         minSdkVersion 17

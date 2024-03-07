@@ -1,6 +1,7 @@
 package com.therouter.plugin
 
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import org.apache.commons.io.IOUtils
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassWriter

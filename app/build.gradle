@@ -7,7 +7,6 @@ apply plugin: 'kotlin-kapt'
 android {
     namespace "com.therouter.app"
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.therouter.app"
