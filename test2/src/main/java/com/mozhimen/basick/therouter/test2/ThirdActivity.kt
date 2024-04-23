@@ -10,6 +10,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @Route(path = "/third?type=mod", isDeconstructPath = false)
 class ThirdActivity : BaseActivityVDB<ActivityThirdBinding>() {
     override fun initView(savedInstanceState: Bundle?) {
-        android.util.Log.d(TAG, "initView: EXTRA2 ${intent.getStringExtra("EXTRA2")}")
+        android.util.UtilKLogWrapper.d(TAG, "initView: EXTRA2 ${intent.getStringExtra("EXTRA2")}")
     }
 }

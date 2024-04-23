@@ -11,7 +11,7 @@ import com.therouter.router.Route
 class SecondActivity : BaseActivityVDB<ActivitySecondBinding>() {
     override fun initView(savedInstanceState: Bundle?) {
 //        TheRouter.inject(this)
-        android.util.Log.d(TAG, "initView: EXTRA ${intent.getStringExtra("EXTRA")}")
+        android.util.UtilKLogWrapper.d(TAG, "initView: EXTRA ${intent.getStringExtra("EXTRA")}")
         vdb.secondBtn.setOnClickListener {
             TheRouter.build("/main").navigation()
         }
