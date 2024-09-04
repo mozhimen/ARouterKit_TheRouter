@@ -1,7 +1,7 @@
 package com.mozhimen.basick.therouter.test
 
-import com.mozhimen.basick.elemk.android.app.bases.BaseApplication
-import com.mozhimen.basick.lintk.optin.OptInApiMultiDex_InApplication
+import com.mozhimen.stackk.bases.BaseApplication
+import com.mozhimen.kotlin.lintk.optin.OptInApiMultiDex_InApplication
 import com.therouter.TheRouter
 import dagger.hilt.android.HiltAndroidApp
 
