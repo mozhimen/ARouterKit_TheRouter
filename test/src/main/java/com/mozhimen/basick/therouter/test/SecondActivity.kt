@@ -2,7 +2,7 @@ package com.mozhimen.basick.therouter.test
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.mozhimen.mvvmk.bases.activity.databinding.BaseActivityVDB
+import com.mozhimen.bindk.bases.activity.databinding.BaseActivityVDB
 import com.mozhimen.basick.therouter.test.databinding.ActivitySecondBinding
 import com.therouter.TheRouter
 import com.therouter.router.Route
