@@ -43,8 +43,7 @@ dependencies {
     implementation 'com.google.dagger:hilt-android:2.50'
     kapt 'com.google.dagger:hilt-compiler:2.50'
     
-    implementation project(':SwiftKit:basick')
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation project(':ASwiftKit:basick')
     implementation project(':test2')
 
     //therouter
