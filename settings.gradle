@@ -28,32 +28,34 @@ include ':business-base'
 include ':therouter'
 include ':therouter_apt'
 include ':therouter_plugin'
+//ALibKit_Google
+include ':ALibKit_Google'
+project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
+include ':ALibKit_Google:gson'
+include ':ALibKit_Google:material'
 //ALibKit_Jetpack
 include ':ALibKit_Jetpack'
 project(':ALibKit_Jetpack').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetpack")
 include ':ALibKit_Jetpack:appcompat'
 include ':ALibKit_Jetpack:multidex'
 include ':ALibKit_Jetpack:annotation'
-//ALibKit_Google
-include ':ALibKit_Google'
-project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
-include ':ALibKit_Google:gson'
-include ':ALibKit_Google:material'
+include ':ALibKit_Jetpack:core'
 //ALibKit_Jetbrains
 include ':ALibKit_Jetbrains'
 project(':ALibKit_Jetbrains').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetbrains")
 include ':ALibKit_Jetbrains:kotlin_stdlib'
 include ':ALibKit_Jetbrains:kotlin_stdlib_jdk8'
 include ':ALibKit_Jetbrains:kotlinx_coroutines'
+//KUtilKit
+include ':KUtilKit'
+project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
+include ':KUtilKit:android'
+include ':KUtilKit:kotlin'
 //ASwiftKit
 include ':ASwiftKit'
 project(':ASwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASwiftKit")
 include ':ASwiftKit:basick'
-//KUtilKit
-include ':KUtilKit'
-project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
-include ':KUtilKit:utilk_android'
-include ':KUtilKit:utilk_kotlin'
+
 
 //apply from: "${rootDir}/therouter.gradle"
 //getLocalProperties().entrySet().each { entry ->
