@@ -34,7 +34,7 @@ android {
 dependencies {
     implementation project(':ALibKit_Google:gson')
     implementation project(':ALibKit_Jetpack:appcompat')
-    implementation project(':ALibKit_Jetbrains:kotlin_stdlib_jdk8')
+    implementation project(':ALibKit_Jetbrains:kotlin-stdlib_jdk8')
 }
 
 //task sourcesJar(type: Jar) {
