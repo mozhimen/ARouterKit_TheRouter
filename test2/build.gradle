@@ -44,7 +44,7 @@ dependencies {
     implementation 'com.google.dagger:hilt-android:2.50'
     kapt 'com.google.dagger:hilt-compiler:2.50'
 
-    implementation project(':ASwiftKit:basick')
+    implementation 'com.github.mozhimen.ASwiftKit:basick:2.0.4'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
