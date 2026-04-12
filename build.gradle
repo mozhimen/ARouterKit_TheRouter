@@ -54,7 +54,8 @@ subprojects {
                         version = versionToPublished
 
                         pom.withXml {
-                            def dependenciesNode = asNode().appendNode("dependencies")
+                            def root = asNode()
+                            def dependenciesNode = root.dependencies ? root.dependencies[0] : root.appendNode('dependencies')
 
                             // 在执行时获取依赖，而不是配置时
                             def apiDeps = project.configurations.api.allDependencies.toList()
@@ -120,7 +121,8 @@ subprojects {
                                 }
 
                                 pom.withXml {
-                                    def dependenciesNode = asNode().appendNode("dependencies")
+                                    def root = asNode()
+                                    def dependenciesNode = root.dependencies ? root.dependencies[0] : root.appendNode('dependencies')
 
                                     // 在执行时获取依赖
                                     def apiDeps = project.configurations.api.allDependencies.toList()
