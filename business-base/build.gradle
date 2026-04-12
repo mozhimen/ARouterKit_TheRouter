@@ -7,7 +7,7 @@ group = "cn.therouter.demo"
 
 android {
     namespace "com.therouter.businessbase"
-    compileSdkVersion 30
+    compileSdk 34
 
     defaultConfig {
         minSdkVersion 17

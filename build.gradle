@@ -16,7 +16,7 @@ buildscript {
     }
     dependencies {
         classpath files('./therouter_plugin.jar')//"cn.therouter:plugin:$TheRouterVersion"
-        classpath "com.android.tools.build:gradle:7.4.2"
+        classpath "com.android.tools.build:gradle:8.6.1"
         classpath "com.google.devtools.ksp:symbol-processing-gradle-plugin:1.9.25-1.0.20"
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.50'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.25"
@@ -39,7 +39,7 @@ task clean(type: Delete) {
 
 subprojects {
     apply plugin: 'maven-publish'
-    def versionToPublished = '0.0.1'
+    def versionToPublished = '0.0.2'
     def groupIdToPublished = 'com.github.mozhimen.ARouterKit_TheRouter'
 
     afterEvaluate { project ->

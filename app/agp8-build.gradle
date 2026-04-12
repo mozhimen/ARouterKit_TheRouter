@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.therouter.app"
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.therouter.app"

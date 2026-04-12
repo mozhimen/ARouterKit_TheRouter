@@ -9,7 +9,7 @@ group = "cn.therouter.demo"
 
 android {
     namespace = "com.therouter.businessa"
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         minSdk 17
