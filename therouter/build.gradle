@@ -3,13 +3,10 @@ apply plugin: 'kotlin-android'
 
 android {
     namespace "com.therouter"
-    compileSdkVersion 30
+    compileSdk 33
 
     defaultConfig {
-        minSdkVersion 17
-        targetSdkVersion 30
-        versionCode 1
-        versionName project.version
+        minSdk 21
     }
     buildTypes {
         release {
@@ -18,11 +15,11 @@ android {
         }
     }
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = '1.8'
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     lintOptions {
         abortOnError false
@@ -32,9 +29,10 @@ android {
 }
 
 dependencies {
-    implementation project(':ALibKit_Google:gson')
-    implementation project(':ALibKit_Jetpack:appcompat')
-    implementation project(':ALibKit_Jetbrains:kotlin_stdlib_jdk8')
+    implementation 'com.github.mozhimen.ALibKit_Google:gson:0.0.6'
+    implementation 'com.github.mozhimen.ALibKit_Jetpack:activity-bom:0.0.7'
+    implementation 'com.github.mozhimen.ALibKit_Jetpack:fragment-bom:0.0.7'
+    implementation 'com.github.mozhimen.ALibKit_Jetbrains:kotlin-stdlib_jdk8:0.0.2'
 }
 
 //task sourcesJar(type: Jar) {
@@ -44,11 +42,11 @@ dependencies {
 
 //apply plugin: "org.jetbrains.dokka"
 
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    options.encoding = "UTF-8"
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    options.encoding = "UTF-8"
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
 
 //task dokkaJavadoccccc(type: org.jetbrains.dokka.gradle.DokkaTask) {
 //    outputDirectory = javadoc.destinationDir

@@ -39,9 +39,9 @@ android {
 }
 
 dependencies {
-    implementation project(':ALibKit_Jetpack:appcompat')
-    implementation project(':ALibKit_Jetpack:multidex')
-    implementation project(':ALibKit_Jetbrains:kotlin_stdlib_jdk8')
+    implementation 'com.github.mozhimen.ALibKit_Jetpack:activity-bom:0.0.7'
+    implementation 'com.github.mozhimen.ALibKit_Jetpack:multidex:0.0.7'
+    implementation 'com.github.mozhimen.ALibKit_Jetbrains:kotlin-stdlib_jdk8:0.0.2'
 
 //    kapt "cn.therouter:apt:$TheRouterVersion"
 //    implementation "cn.therouter:router:$TheRouterVersion"

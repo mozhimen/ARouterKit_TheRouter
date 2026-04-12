@@ -1,6 +1,11 @@
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://www.jitpack.io' }
+        mavenLocal()
+        maven { url "https://jitpack.io" }
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
@@ -11,65 +16,19 @@ dependencyResolutionManagement {
         maven { url 'https://gitee.com/liuchaoya/libcommon/raw/master/repository/' }
         maven { url "https://repo.eclipse.org/content/repositories/paho-snapshots/" }
         maven { url 'https://developer.huawei.com/repo/' }
-        maven { url "https://jitpack.io" }
-        maven { url 'https://www.jitpack.io' }
-        mavenCentral()
-        google()
+
     }
 }
 
 rootProject.name = "ARouterKit_TheRouter"
-include ':test'
-include ':test2'
-include ':app'
-include ':business-a'
-include ':business-b'
-include ':business-base'
+//include ':test'
+//include ':test2'
+//include ':app'
+//include ':business-a'
+//include ':business-b'
+//include ':business-base'
 include ':therouter'
 include ':therouter_apt'
-include ':therouter_plugin'
-//ALibKit_Google
-include ':ALibKit_Google'
-project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
-include ':ALibKit_Google:gson'
-include ':ALibKit_Google:material'
-//ALibKit_Jetpack
-include ':ALibKit_Jetpack'
-project(':ALibKit_Jetpack').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetpack")
-include ':ALibKit_Jetpack:appcompat'
-include ':ALibKit_Jetpack:multidex'
-include ':ALibKit_Jetpack:annotation'
-include ':ALibKit_Jetpack:core'
-//ALibKit_Jetbrains
-include ':ALibKit_Jetbrains'
-project(':ALibKit_Jetbrains').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetbrains")
-include ':ALibKit_Jetbrains:kotlin_stdlib'
-include ':ALibKit_Jetbrains:kotlin_stdlib_jdk8'
-include ':ALibKit_Jetbrains:kotlinx_coroutines'
-//KUtilKit
-include ':KUtilKit'
-project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
-include ':KUtilKit:android'
-include ':KUtilKit:kotlin'
-//ASwiftKit
-include ':ASwiftKit'
-project(':ASwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASwiftKit")
-include ':ASwiftKit:basick'
-
-
-//apply from: "${rootDir}/therouter.gradle"
-//getLocalProperties().entrySet().each { entry ->
-//    def prefix = ""
-////    if (entry.key.startsWith(prefix) && Boolean.valueOf(entry.value)) {
-//    if (Boolean.valueOf(entry.value)) {
-//        def moduleName = entry.key
-//        if (!String.valueOf(moduleName).isEmpty()) {
-//            def file = file(moduleName)
-//            if (file.exists()) {
-//                include ":$moduleName"
-//                project(":$moduleName").projectDir = file
-//            }
-//        }
-//    }
-//}
 include ':routerk'
+//include ':therouter_plugin'
+

@@ -42,6 +42,6 @@ android {
 
 dependencies {
     moduleKapt "cn.therouter:apt:$TheRouterVersion"
-    implementation project(':ALibKit_Jetpack:appcompat')
+    implementation 'com.github.mozhimen.ALibKit_Jetpack:activity-bom:0.0.7'
     moduleImplementation "cn.therouter:router:$TheRouterVersion"
 }
