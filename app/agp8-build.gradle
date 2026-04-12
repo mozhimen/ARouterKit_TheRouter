@@ -48,6 +48,7 @@ dependencies {
     implementation project(':ALibKit_Jetpack:multidex')
     implementation 'com.github.mozhimen.ALibKit_Jetbrains:kotlin-stdlib_jdk8:0.0.2'
 
+
     moduleKapt "cn.therouter:apt:$TheRouterVersion"
     moduleImplementation "cn.therouter:router:$TheRouterVersion"
     api project(":business-base")
